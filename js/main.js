@@ -1,7 +1,13 @@
 class Peca {
+
+  #valor
+
   constructor(valor) {
-    this.valor = valor;
+    this.#valor = valor;
   }
+
+  get valor() { return this.#valor; }
+  set valor(valor) { return this.#valor = valor }
 }
 
 class PecaNumerica extends Peca {
@@ -19,9 +25,9 @@ class PecaVazia extends Peca {
 class Tabuleiro {
   constructor() {
     this.tabuleiro = [];
-    this.inicializarTabuleiro();
     this.inicializarEmbaralhamento();
     this.turnoJogador1 = true;
+    this.inicializarTabuleiro();
     this.temporizador = null;
     this.startTime = null;
     this.moveCounter = 0;
@@ -88,6 +94,8 @@ class Tabuleiro {
     this.embaralhar();
   }
 
+
+  // Regra do botão embaralhar
   inicializarEmbaralhamento() {
     const botaoEmbaralhar = document.getElementById("embaralhar");
     botaoEmbaralhar.addEventListener("click", () => {
@@ -220,7 +228,13 @@ class Tabuleiro {
       tabuleiroElement.appendChild(pecaElement);
     }
   }
+
+  static criarNovoTabuleiro() {
+    const tabuleiro = new Tabuleiro();
+    tabuleiro.exibirTabuleiro();
+    return tabuleiro;
+  }
+
 }
 
-const tabuleiro = new Tabuleiro();
-tabuleiro.exibirTabuleiro();
+const tabuleiro = Tabuleiro.criarNovoTabuleiro();
