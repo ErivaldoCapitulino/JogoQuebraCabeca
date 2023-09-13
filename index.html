@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Quebra-Cabeça</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Jogo de Quebra-Cabeça</h1>
+        <span id="elapsed-time">0 segundos</span>
+
+    </header>
+    <main>
+        <div class="vitoriaNone" id="vitoria">
+            <div>
+                <h1>PARABÉNS</h1>
+                <!-- <h3>Você ganhou</h3> -->
+                <p id="textVitoria"></p>
+                <button onclick="tabuleiro.jogarNovamente()" class="btn">Jogar novamente</button>
+            </div>
+        </div>
+
+        <div id="tabuleiro"></div>
+
+        <button id="embaralhar">Embaralhar Peças</button>
+
+        <!-- <div id="placar">
+
+        <h2>Placar</h2>
+
+        <div>
+            <span>Jogador 1:</span>
+            <span id="placar-jogador1">0</span>
+        </div>
+
+        <div>
+            <span>Jogador 2:</span>
+            <span id="placar-jogador2">0</span>
+        </div>
+    </div> -->
+        <!-- Inclua os arquivos JavaScript -->
+    </main>
+    <footer></footer>
+
+
+    <script src="./js/main.js"></script>
+
+
+</body>
+
+</html>
